@@ -1,0 +1,19 @@
+name: sensortag
+version: 1.0.0
+vendor: Shuduo Sang <shuduo.sang@canonical.com>
+icon: icon.png
+summary: SensorTag Python Bluetooth LE implementation
+description: API and command line tools for Python Bluetooth Low Energy access
+confinement: strict
+
+binaries:
+  sensortag:
+    exec: usr/bin/sensortag
+    slots: [bluez]
+
+parts:
+  bluepy:
+    plugin: python3
+    source: git://github.com/IanHarvey/bluepy
+    source-type: git
+    stage-packages: [libglib2.0-dev]
